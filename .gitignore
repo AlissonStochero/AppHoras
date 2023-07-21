@@ -1,1 +1,4 @@
 App.Api/.vs/
+App.Domain/obj
+App.Application/obj
+App.Infrastructure/obj
