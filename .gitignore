@@ -3,3 +3,8 @@ App.Api/obj/
 App.Domain/obj/
 App.Application/obj/
 App.Infrastructure/obj/
+
+App.Api/bin/
+App.Domain/bin/
+App.Application/bin/
+App.Infrastructure/bin/
