@@ -20,7 +20,7 @@ namespace App.Domain.Entities
         public DateTime UpdatedAt { get; private set; }
 
         // Relacionamento com a Empresa
-        public int EmpresaId { get; set; }
+        public Guid EmpresaId { get; set; }
         public Empresa Empresa { get; set; }
         public IList<TabelaHoras> TabelasHoras { get; set; }
         public IList<ValorHora> ValorHora { get; set; }

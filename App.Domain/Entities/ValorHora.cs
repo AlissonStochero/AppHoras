@@ -22,7 +22,7 @@ namespace App.Domain.Entities
         public DateTime UpdatedAt { get; private set; }
 
         // Relacionamento com o Colaborador
-        public int ColaboradorId { get; set; }
+        public Guid ColaboradorId { get; set; }
         public Colaborador Colaborador { get; set; }
     }
 }

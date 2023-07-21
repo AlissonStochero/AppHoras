@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,13 @@ namespace App.Domain.Entities
 {
     public class TabelaHoras : BaseEntity
     {
-        public TabelaHoras(DateTime horaInicio, DateTime horaTermino, string descricaoAtividade, DateTime createdAt, DateTime updatedAt, Colaborador colaborador)
+        public TabelaHoras(DateTime horaInicio, DateTime horaTermino, string descricaoAtividade, DateTime createdAt, DateTime updatedAt)
         {
             HoraInicio = horaInicio;
             HoraTermino = horaTermino;
             DescricaoAtividade = descricaoAtividade;
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
-            Colaborador = colaborador;
         }
 
         public DateTime HoraInicio { get; private set; }
@@ -25,7 +25,8 @@ namespace App.Domain.Entities
         public DateTime UpdatedAt { get; private set; }
 
         // Relacionamento com o Colaborador
-        public int ColaboradorId { get; set; }
+        [ForeignKey(nameof(Colaborador))]
+        public Guid ColaboradorId { get; set; }
         public Colaborador Colaborador { get; set; }
         public IList<AtividadeRealizada> AtividadesRealizadas { get; set; }
     }

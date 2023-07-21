@@ -22,7 +22,7 @@ namespace App.Domain.Entities
         public DateTime UpdatedAt { get; private set; }
 
         // Relacionamento com a Tabela de Horas
-        public int TabelaHorasId { get; set; }
+        public Guid TabelaHorasId { get; set; }
         public TabelaHoras TabelaHoras { get; set; }
     }
 }
