@@ -1,5 +1,7 @@
-﻿using App.Application.Services.Interfaces;
+﻿using App.Application.Commands.EmpresaCommands;
+using App.Application.Services.Interfaces;
 using App.Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.Api.Controllers
@@ -9,9 +11,11 @@ namespace App.Api.Controllers
     public class EmpresaController : ControllerBase
     {
         private readonly IEmpresaService _empresaService;
-        public EmpresaController(IEmpresaService empresaService)
+        private readonly IMediator mediator;
+        public EmpresaController(IEmpresaService empresaService, IMediator _mediator)
         {
             _empresaService = empresaService;
+            mediator = _mediator;
         }
         [HttpGet]
         public IActionResult GetAll()
@@ -19,9 +23,9 @@ namespace App.Api.Controllers
             return Ok(_empresaService.GetAll());
         }
         [HttpPost]
-        public IActionResult Create([FromBody] Empresa empresa)
+        public async Task<IActionResult> Create([FromBody] CriarEmpresaCommand command)
         {
-            return CreatedAtAction(nameof(Create),_empresaService.Create(empresa));
+            return CreatedAtAction(nameof(Create), await mediator.Send(command));
         }
     }
 }
