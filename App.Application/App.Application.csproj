@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\EmpresaCommands\CriarEmpresa\" />
     <Folder Include="InputModels\" />
   </ItemGroup>
 

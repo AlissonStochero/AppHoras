@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Application.Commands.EmpresaCommands
+namespace App.Application.Commands.EmpresaCommands.CriarEmpresa
 {
     public class CriarEmpresaCommand : IRequest<Empresa>
     {

@@ -2,7 +2,7 @@
 using App.Infrastructure.Persistence;
 using MediatR;
 
-namespace App.Application.Commands.EmpresaCommands
+namespace App.Application.Commands.EmpresaCommands.CriarEmpresa
 {
     public class CriarEmpresaCommandHandler : IRequestHandler<CriarEmpresaCommand, Empresa>
     {

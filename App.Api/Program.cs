@@ -1,4 +1,4 @@
-using App.Application.Commands.EmpresaCommands;
+using App.Application.Commands.EmpresaCommands.CriarEmpresa;
 using App.Application.Services.Implementation;
 using App.Application.Services.Interfaces;
 using App.Infrastructure.Persistence;
